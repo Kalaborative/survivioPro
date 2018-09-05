@@ -21,12 +21,17 @@ $(document).ready(function() {
 		}).done(function (res) {
 			$("#圖層_1").fadeOut('fast');
 			$("#statusText").html("Results complete!");
-			for (let i = 0; i < res.length; i++) {
-				$(".result-list").append('<li><b><a href="http://surviv.io/stats/' + res[i][3] + '" target="_blank">'  + res[i][0] + '</a></b> — ' + res[i][1] + 'KDR — <i>last game ' + res[i][2] + ' mins ago</li>');
+			if (res.length > 0) {
+				for (let i = 0; i < res.length; i++) {
+					$(".result-list").append('<li><b><a href="http://surviv.io/stats/' + res[i][3] + '" target="_blank">'  + res[i][0] + '</a></b> — ' + res[i][1] + 'KDR — <i>last game ' + res[i][2] + ' mins ago</li>');
+				}			
+			} else {
+				$("#statusText").html("No results within the last hour.");
 			}
+
 		}).fail(function () {
 			$("#圖層_1").fadeOut('fast');
-			$("#statusText").html("Couldn't complete request! Check your connection to surviv.io.")
+			$("#statusText").html("Couldn't complete request! Check your connection to surviv.io.");
 		});
 	});
 });
