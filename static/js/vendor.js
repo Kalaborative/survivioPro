@@ -24,8 +24,9 @@ $(document).ready(function() {
 			for (let i = 0; i < res.length; i++) {
 				$(".result-list").append('<li><b>' + res[i][0] + '</b> — ' + res[i][1] + 'KDR — <i>last game ' + res[i][2] + ' mins ago</li>');
 			}
-		}).fail(function (err) {
-			console.log(err);
+		}).fail(function () {
+			$("#圖層_1").fadeOut('fast');
+			$("#statusText").html("Couldn't complete request! Check your connection to surviv.io.")
 		});
 	});
 });
