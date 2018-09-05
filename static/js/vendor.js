@@ -22,7 +22,7 @@ $(document).ready(function() {
 			$("#圖層_1").fadeOut('fast');
 			$("#statusText").html("Results complete!");
 			for (let i = 0; i < res.length; i++) {
-				$(".result-list").append('<li><b><a href="http://surviv.io/stats/' + res[i][3] + '">'  + res[i][0] + '</a></b> — ' + res[i][1] + 'KDR — <i>last game ' + res[i][2] + ' mins ago</li>');
+				$(".result-list").append('<li><b><a href="http://surviv.io/stats/' + res[i][3] + '" target="_blank">'  + res[i][0] + '</a></b> — ' + res[i][1] + 'KDR — <i>last game ' + res[i][2] + ' mins ago</li>');
 			}
 		}).fail(function () {
 			$("#圖層_1").fadeOut('fast');
