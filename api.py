@@ -41,7 +41,7 @@ def get_recent_top_players(response):
 		last_played_timedelta = now - first_game_endtime
 		last_played_mins = round(last_played_timedelta.seconds / 60)
 		if last_played_mins < 60:
-			recent_top_players.append([player['username'], player['val'], last_played_mins])
+			recent_top_players.append([player['username'], player['val'], last_played_mins, player['slug']])
 		sleep(1)
 
 	recent_top_sorted = sorted(recent_top_players, key=lambda f: f[2])
