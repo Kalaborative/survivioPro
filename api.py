@@ -43,6 +43,6 @@ def get_recent_top_players(response):
 		if last_played_mins < 60:
 			recent_top_players.append([player['username'], player['val'], last_played_mins, player['slug']])
 		sleep(1)
-	if len(recent_top_sorted) > 0:
+	if len(recent_top_players) > 0:
 		recent_top_sorted = sorted(recent_top_players, key=lambda f: f[2])
 	return recent_top_sorted
