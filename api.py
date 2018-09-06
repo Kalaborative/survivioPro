@@ -45,4 +45,6 @@ def get_recent_top_players(response):
 		sleep(1)
 	if len(recent_top_players) > 0:
 		recent_top_sorted = sorted(recent_top_players, key=lambda f: f[2])
+	else:
+		recent_top_sorted = []
 	return recent_top_sorted
