@@ -16,7 +16,7 @@ def load_top_players(gamemode):
 	leaderboard_url = "http://surviv.io/api/leaderboard"
 	r = requests.get(leaderboard_url, params=lb_payload)
 	response = r.json()
-	return response[:20]
+	return response
 
 def get_recent_top_players(response):
 	"""Returns a sorted list of recent top players given a JSON response."""
@@ -41,7 +41,7 @@ def get_recent_top_players(response):
 		last_played_timedelta = now - first_game_endtime
 		last_played_mins = round(last_played_timedelta.seconds / 60)
 		if last_played_mins < 60:
-			recent_top_players.append([player['username'], player['val'], last_played_mins, player['slug']])
+			recent_top_players.append([player['username'], player['val'], last_played_mins, player['slug'], res[0]["region"]])
 		sleep(1)
 	if len(recent_top_players) > 0:
 		recent_top_sorted = sorted(recent_top_players, key=lambda f: f[2])

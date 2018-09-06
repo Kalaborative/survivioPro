@@ -171,6 +171,27 @@ a.fancy-button:hover {
 
 .card {
 	background-color: black;
+	margin-top: 2em;
+}
+
+.card-body {
+	overflow-y: scroll;
+	height: 20em;
+}
+
+.card-body::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+	background-color: #1fdf05;
+}
+
+.card-body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #182419;
 }
 
 svg {
@@ -184,4 +205,8 @@ svg {
 
 .result-list {
 	color: #15a08e;
+}
+
+.progress-bar {
+	background-color: #74f2ce;
 }
